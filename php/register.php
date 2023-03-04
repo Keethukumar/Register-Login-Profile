@@ -7,11 +7,7 @@ require_once 'config.php';
 	$user_email = $_POST['email'];
 	$statement = $db->prepare("SELECT email FROM users WHERE email= :email");
 	$statement->execute(array(':email' => $_POST['email']));
-	// $sql = "SELECT email FROM users WHERE email='$user_email'";
-	// $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
-	// $row = mysqli_fetch_assoc($resultset);		
-
-	echo "fuckwfrlnwerfwrwer";
+	
 	$row = $statement->fetchAll(PDO::FETCH_ASSOC);
 	if(!$row['email']){	
 
